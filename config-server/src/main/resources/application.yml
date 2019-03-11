@@ -1,12 +1,26 @@
+#------------本地读取-------------------
+#spring:
+#  cloud:
+#    config:
+#      server:
+#        native:
+#          search-locations: classpath:/shared
+#  profiles:
+#    active: native
+#  application:
+#    name: config-server
+server:
+  port: 8769
+#------------本地读取-------------------
 spring:
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/shared
-  profiles:
-    active: native
+        git:
+          uri: https://github.com/DorraChen/springcloudconfigdemo
+          search-paths: respo
+          username: ****
+          password: *****
+        default-label: master
   application:
     name: config-server
-server:
-  port: 8769
